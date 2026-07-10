@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZH.HybridTopia - HT Platform 2.3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --bg-body: #E8EDF2;
+            --bg-header-top: #1a3c5e;
+            --bg-header-bottom: #1f4d78;
+            --bg-nav: #2B6DA8;
+            --bg-nav-hover: #1e5a8a;
+            --bg-content: #FFFFFF;
+            --bg-sidebar-block: #F8FAFC;
+            --bg-table-header: #EAF1F8;
+            --bg-table-stripe: #F9FBFD;
+            --bg-table-hover: #F0F5FA;
+            --bg-sticky-row: #FFF9E6;
+            --bg-btn-primary: #3B8AD9;
+            --bg-btn-primary-hover: #2B6DA8;
+            --bg-btn-sponsor: #F0A030;
+            --bg-btn-sponsor-hover: #D4881E;
+            --bg-input: #FFF;
+            --text-dark: #2C3E50;
+            --text-mid: #4A5568;
+            --text-light: #6B7D8E;
+            --text-white: #FFF;
+            --text-link: #2B6DA8;
+            --text-link-hover: #1a4d7e;
+            --text-sticky: #8B6914;
+            --border-color: #CDD6DF;
+            --border-light: #DDE4EC;
+            --border-table: #D5DDE6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.12);
+            --radius-sm: 3px;
+            --radius-md: 5px;
+            --radius-lg: 7px;
+            --font-base: 'Microsoft YaHei', 'SimSun', 'PingFang SC', Arial, 'Helvetica Neue', sans-serif;
+            --font-mono: Consolas, 'Courier New', 'SimSun', monospace;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 13px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-title: 20px;
+            --transition-fast: 0.15s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #DCE3EA;
+            background-image: linear-gradient(180deg, #C8D4E0 0%, #DCE3EA 3%, #E8EDF2 100%);
+            background-attachment: fixed;
+            font-family: var(--font-base);
+            font-size: var(--font-size-base);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-width: 1000px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============ 顶部装饰线 ============ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1a3c5e 0%, #2B6DA8 30%, #3B8AD9 50%, #2B6DA8 70%, #1a3c5e 100%);
+            z-index: 1000;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ============ 整体容器 ============ */
+        #wrap {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #FFF;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.18), 0 0 3px rgba(0, 0, 0, 0.10);
+            border-left: 1px solid #BCC7D4;
+            border-right: 1px solid #BCC7D4;
+            border-bottom: 1px solid #BCC7D4;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            margin-top: 3px;
+            min-height: 100vh;
+        }
+
+        /* ============ 标题栏 ============ */
+        #header {
+            background: linear-gradient(180deg, #1f4d78 0%, #1a3c5e 100%);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #15304a;
+            position: relative;
+            min-height: 52px;
+        }
+        #header .site-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        #header .site-logo .prefix {
+            color: #8899AA;
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        #header .site-logo .name {
+            color: #E8F0F8;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+        #header .header-spacer {
+            flex: 1;
+            min-width: 20px;
+        }
+        #header .platform-version {
+            color: #7B9BB8;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            white-space: nowrap;
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            letter-spacing: 0.3px;
+            font-family: var(--font-mono);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* ============ 导航栏 ============ */
+        #navbar {
+            background: linear-gradient(180deg, #3B8AD9 0%, #2B6DA8 100%);
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            height: 38px;
+            border-bottom: 1px solid #1e5a8a;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            position: relative;
+            z-index: 10;
+        }
+        #navbar .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex-shrink: 0;
+            height: 100%;
+        }
+        #navbar .nav-left a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #D4E4F4;
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            height: 30px;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+        }
+        #navbar .nav-left a:hover {
+            background: rgba(255, 255, 255, 0.16);
+            color: #FFF;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        #navbar .nav-left a i {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        #navbar .nav-spacer {
+            flex: 1;
+            min-width: 10px;
+        }
+        #navbar .nav-right {
+            flex-shrink: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        #navbar .nav-right .btn-login {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #FFF;
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            padding: 6px 16px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+            height: 30px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+        }
+        #navbar .nav-right .btn-login:hover {
+            background: rgba(255, 255, 255, 0.24);
+            border-color: rgba(255, 255, 255, 0.45);
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+
+        /* ============ 面包屑/位置提示 ============ */
+        #breadcrumb {
+            background: #F4F7FA;
+            padding: 7px 20px;
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-light);
+            letter-spacing: 0.2px;
+        }
+        #breadcrumb i {
+            color: #8DA0B5;
+            margin: 0 3px;
+            font-size: 10px;
+        }
+        #breadcrumb a {
+            color: var(--text-link);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ 主容器 ============ */
+        #main-container {
+            display: flex;
+            gap: 0;
+            padding: 14px 16px 20px 16px;
+            align-items: flex-start;
+        }
+
+        /* ============ 左栏 ============ */
+        #sidebar {
+            width: 235px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .sidebar-block {
+            background: var(--bg-sidebar-block);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-block .block-header {
+            background: linear-gradient(180deg, #EDF3F9 0%, #DEE7F1 100%);
+            padding: 8px 12px;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: #3A5A7C;
+            border-bottom: 1px solid var(--border-color);
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .sidebar-block .block-header i {
+            color: #5A7DA0;
+            font-size: 13px;
+        }
+        .sidebar-block .block-body {
+            padding: 10px 12px;
+            font-size: var(--font-size-sm);
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+        /* 用户信息 */
+        .user-info-card {
+            text-align: center;
+            padding: 14px 10px;
+        }
+        .user-info-card .avatar-placeholder {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #D5DFE8;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #C5D2DE;
+        }
+        .user-info-card .avatar-placeholder i {
+            font-size: 32px;
+            color: #A0B5C8;
+        }
+        .user-info-card .username {
+            font-weight: 700;
+            color: #5A6E80;
+            font-size: var(--font-size-md);
+            margin-bottom: 4px;
+        }
+        .user-info-card .user-status {
+            font-size: var(--font-size-xs);
+            color: #95A8B8;
+            margin-bottom: 10px;
+        }
+        .user-info-card .btn-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-sm {
+            display: inline-block;
+            padding: 5px 14px;
+            font-size: var(--font-size-xs);
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border: 1px solid transparent;
+            font-family: inherit;
+        }
+        .btn-login-sm {
+            background: var(--bg-btn-primary);
+            color: #FFF;
+            border-color: #2B6DA8;
+        }
+        .btn-login-sm:hover {
+            background: var(--bg-btn-primary-hover);
+            border-color: #1a4d7e;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .btn-register-sm {
+            background: #FFF;
+            color: var(--text-link);
+            border-color: #BCC8D6;
+        }
+        .btn-register-sm:hover {
+            background: #F0F5FA;
+            border-color: #8DA0B8;
+        }
+        /* 板块快捷列表 */
+        .forum-quick-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .forum-quick-list li {
+            padding: 6px 0;
+            border-bottom: 1px dotted #E5EAF0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-size-sm);
+        }
+        .forum-quick-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 2px;
+        }
+        .forum-quick-list li a {
+            color: var(--text-link);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        .forum-quick-list li a:hover {
+            color: var(--text-link-hover);
+            text-decoration: underline;
+        }
+        .forum-quick-list li .count-badge {
+            background: #E8EEF5;
+            color: #5A7A95;
+            font-size: var(--font-size-xs);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            min-width: 32px;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+        /* 热门标签 */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .tag-cloud .tag {
+            display: inline-block;
+            padding: 3px 9px;
+            font-size: var(--font-size-xs);
+            background: #EDF2F7;
+            color: #4A6A88;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: 1px solid #D8E1EB;
+            letter-spacing: 0.2px;
+            font-weight: 500;
+        }
+        .tag-cloud .tag:hover {
+            background: #D4E2F0;
+            border-color: #A0BBD4;
+            color: #2B5A80;
+        }
+        .tag-cloud .tag.hot {
+            background: #FFF0E0;
+            color: #B87020;
+            border-color: #F0D0A0;
+            font-weight: 700;
+        }
+        /* RSS */
+        .rss-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #E08030;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            padding: 4px 0;
+            transition: color var(--transition-fast);
+        }
+        .rss-link:hover {
+            color: #C06020;
+            text-decoration: underline;
+        }
+        .rss-link i {
+            font-size: 16px;
+            color: #F08030;
+        }
+        /* 统计 */
+        .stats-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: var(--font-size-xs);
+            line-height: 2;
+        }
+        .stats-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #EBEFF4;
+            padding: 2px 0;
+        }
+        .stats-list li .stat-val {
+            font-weight: 700;
+            color: #3A5A7C;
+        }
+        /* 主题上传 */
+        .css-upload-area {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .css-upload-area .upload-hint {
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        .css-upload-area input[type="file"] {
+            font-size: var(--font-size-xs);
+            padding: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: #FFF;
+            cursor: pointer;
+            font-family: inherit;
+            width: 100%;
+        }
+        .css-upload-area .btn-row-upload {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .btn-upload {
+            font-size: var(--font-size-xs);
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            border: 1px solid #BCC8D6;
+            background: #F8FAFC;
+            color: #4A6A88;
+            transition: all var(--transition-fast);
+            font-family: inherit;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .btn-upload:hover {
+            background: #E8EFF6;
+            border-color: #8DA0B8;
+        }
+        .btn-reset-css {
+            font-size: var(--font-size-xs);
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            border: 1px solid #D8C8B0;
+            background: #FFF8F0;
+            color: #A07040;
+            transition: all var(--transition-fast);
+            font-family: inherit;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+        .btn-reset-css:hover {
+            background: #FFF0E0;
+            border-color: #C89860;
+        }
+        .css-status {
+            font-size: 10px;
+            color: #6A9A4A;
+            font-weight: 600;
+            display: none;
+        }
+        .css-status.active {
+            display: inline;
+        }
+        /* 赞助 */
+        .sponsor-text {
+            font-size: var(--font-size-xs);
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        .btn-sponsor {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 18px;
+            background: var(--bg-btn-sponsor);
+            color: #FFF;
+            border: 1px solid #C88020;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            letter-spacing: 0.3px;
+            font-family: inherit;
+        }
+        .btn-sponsor:hover {
+            background: var(--bg-btn-sponsor-hover);
+            border-color: #A06818;
+            box-shadow: 0 2px 6px rgba(180, 100, 30, 0.3);
+        }
+
+        /* ============ 右栏 ============ */
+        #main-content {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-left: 16px;
+        }
+        .content-section {
+            background: #FFF;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        .section-header {
+            background: linear-gradient(180deg, #F0F5FB 0%, #E2EBF5 100%);
+            padding: 10px 14px;
+            font-size: var(--font-size-md);
+            font-weight: 700;
+            color: #2B5580;
+            border-bottom: 1px solid var(--border-color);
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .section-header i {
+            color: #4A7DA8;
+            font-size: 14px;
+        }
+        .section-header .section-badge {
+            font-size: var(--font-size-xs);
+            background: #E8D8A0;
+            color: #7A5A20;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-left: 6px;
+        }
+        .section-body {
+            padding: 0;
+            overflow-x: auto;
+        }
+        /* 表格样式 */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--font-size-sm);
+            table-layout: auto;
+        }
+        table.data-table thead th {
+            background: #EAF1F8;
+            color: #3A5A7C;
+            font-weight: 700;
+            padding: 9px 10px;
+            text-align: left;
+            border-bottom: 2px solid #C8D6E4;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            font-size: var(--font-size-xs);
+            text-transform: uppercase;
+        }
+        table.data-table tbody td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #E8EDF3;
+            vertical-align: middle;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+        table.data-table tbody tr {
+            transition: background var(--transition-fast);
+        }
+        table.data-table tbody tr:nth-child(even) {
+            background: var(--bg-table-stripe);
+        }
+        table.data-table tbody tr:hover {
+            background: var(--bg-table-hover);
+        }
+        table.data-table tbody tr.sticky-row {
+            background: #FFFDF5;
+            border-left: 3px solid #E8C840;
+        }
+        table.data-table tbody tr.sticky-row td:first-child {
+            padding-left: 10px;
+        }
+        table.data-table .post-title {
+            color: var(--text-link);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            transition: color var(--transition-fast);
+        }
+        table.data-table .post-title:hover {
+            color: var(--text-link-hover);
+            text-decoration: underline;
+        }
+        table.data-table .sticky-icon {
+            color: #E0A020;
+            font-size: 12px;
+            margin-right: 4px;
+        }
+        table.data-table .tag-cell .mini-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            font-size: 10px;
+            background: #EDF2F7;
+            color: #5A7A95;
+            border-radius: 8px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            border: 1px solid #D8E1EB;
+        }
+        table.data-table .tag-cell .mini-tag.tag-announce {
+            background: #FFF0E0;
+            color: #B87020;
+            border-color: #F0D0A0;
+            font-weight: 700;
+        }
+        table.data-table .tag-cell .mini-tag.tag-notice {
+            background: #E8F0FF;
+            color: #3A5AAC;
+            border-color: #C0D0F0;
+            font-weight: 600;
+        }
+        table.data-table .tag-cell .mini-tag.tag-guide {
+            background: #E8F8E8;
+            color: #3A7A3A;
+            border-color: #B8D8B8;
+            font-weight: 600;
+        }
+        table.data-table .num-cell {
+            text-align: center;
+            font-weight: 600;
+            color: #5A7A95;
+            font-size: var(--font-size-xs);
+            white-space: nowrap;
+        }
+        table.data-table .time-cell {
+            font-size: var(--font-size-xs);
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+        table.data-table .user-cell {
+            font-weight: 500;
+            color: #4A6A88;
+            font-size: var(--font-size-xs);
+            white-space: nowrap;
+        }
+        table.data-table .forum-name-cell {
+            font-weight: 600;
+            color: #3A5A7C;
+            font-size: var(--font-size-sm);
+        }
+        table.data-table .forum-name-cell a {
+            color: #3A5A7C;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        table.data-table .forum-name-cell a:hover {
+            color: #1a4d7e;
+            text-decoration: underline;
+        }
+        .no-data {
+            text-align: center;
+            padding: 30px;
+            color: #A0B0C0;
+            font-size: var(--font-size-sm);
+        }
+        .no-data i {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 8px;
+            opacity: 0.5;
+        }
+
+        /* ============ 页脚 ============ */
+        #footer {
+            text-align: center;
+            padding: 16px 20px;
+            font-size: var(--font-size-xs);
+            color: #8DA0B5;
+            border-top: 1px solid var(--border-light);
+            background: #F8FAFC;
+            letter-spacing: 0.2px;
+            line-height: 1.8;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+        #footer a {
+            color: #6A8AA8;
+            text-decoration: none;
+        }
+        #footer a:hover {
+            text-decoration: underline;
+            color: #4A6A88;
+        }
+        #footer .footer-divider {
+            color: #C8D4E0;
+            margin: 0 8px;
+        }
+
+        /* ============ 滚动条美化(Webkit) ============ */
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0F3F6;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C0CDD8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A0B0C0;
+        }
+
+        /* ============ 提示信息条 ============ */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3A7A4A;
+            color: #FFF;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.35s ease;
+            pointer-events: none;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .toast.warning {
+            background: #B87030;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 整体容器 -->
+    <div id="wrap">
+
+        <!-- ========== 标题栏 ========== -->
+        <div id="header">
+            <div class="site-logo">
+                <span class="prefix">ZH.</span><span class="name">HybridTopia</span>
+            </div>
+            <div class="header-spacer"></div>
+            <span class="platform-version">HT Platform 2.3</span>
+        </div>
+
+        <!-- ========== 导航栏 ========== -->
+        <div id="navbar">
+            <div class="nav-left">
+                <a href="#"><i class="fa fa-globe"></i> Language</a>
+                <a href="#"><i class="fa fa-home"></i> 主页</a>
+                <a href="#"><i class="fa fa-comments"></i> 板块</a>
+                <a href="#"><i class="fa fa-search"></i> 搜索</a>
+                <a href="#"><i class="fa fa-info-circle"></i> 关于</a>
+            </div>
+            <div class="nav-spacer"></div>
+            <div class="nav-right">
+                <a href="#" class="btn-login"><i class="fa fa-sign-in"></i> 登录</a>
+            </div>
+        </div>
+
+        <!-- ========== 面包屑 ========== -->
+        <div id="breadcrumb">
+            <i class="fa fa-map-marker"></i> 当前位置：<a href="#">主页</a> <i class="fa fa-angle-right"></i> 论坛首页
+        </div>
+
+        <!-- ========== 主容器 ========== -->
+        <div id="main-container">
+
+            <!-- ===== 左栏 ===== -->
+            <div id="sidebar">
+
+                <!-- 用户信息 -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-user"></i> 用户信息</div>
+                    <div class="block-body user-info-card">
+                        <div class="avatar-placeholder">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="username">游客</div>
+                        <div class="user-status">当前未登录</div>
+                        <div class="btn-row">
+                            <a href="#" class="btn-sm btn-login-sm"><i class="fa fa-sign-in"></i> 登录</a>
+                            <a href="#" class="btn-sm btn-register-sm"><i class="fa fa-user-plus"></i> 注册</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 板块快捷列表 -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-folder-open"></i> 板块导航</div>
+                    <div class="block-body">
+                        <ul class="forum-quick-list">
+                            <li><a href="#">综合讨论</a> <span class="count-badge">48,520</span></li>
+                            <li><a href="#">技术交流</a> <span class="count-badge">32,100</span></li>
+                            <li><a href="#">资源分享</a> <span class="count-badge">67,800</span></li>
+                            <li><a href="#">国外精华帖文搬运</a> <span class="count-badge">18,900</span></li>
+                            <li><a href="#">适兽化</a> <span class="count-badge">54,300</span></li>
+                            <li><a href="#">站务管理</a> <span class="count-badge">3,200</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 热门标签 -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-tags"></i> 热门标签</div>
+                    <div class="block-body">
+                        <div class="tag-cloud">
+                            <a href="#" class="tag hot">（无标签）</a>
+                            <a href="#" class="tag hot">教程</a>
+                            <a href="#" class="tag hot">资源</a>
+                            <a href="#" class="tag">日常</a>
+                            <a href="#" class="tag">搬运</a>
+                            <a href="#" class="tag">文学</a>
+                            <a href="#" class="tag">技术</a>
+                            <a href="#" class="tag">求助</a>
+                            <a href="#" class="tag">讨论</a>
+                            <a href="#" class="tag">投票</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RSS -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-rss"></i> RSS 订阅</div>
+                    <div class="block-body">
+                        <a href="#" class="rss-link"><i class="fa fa-rss-square"></i> 订阅此页</a>
+                        <p style="font-size:11px;color:#8DA0B5;margin-top:3px;">通过RSS阅读器获取实时更新</p>
+                    </div>
+                </div>
+
+                <!-- 统计 -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-bar-chart"></i> 论坛统计</div>
+                    <div class="block-body">
+                        <ul class="stats-list">
+                            <li><span>总帖文数</span> <span class="stat-val">245,820</span></li>
+                            <li><span>总主题数</span> <span class="stat-val">38,450</span></li>
+                            <li><span>总用户数</span> <span class="stat-val">12,380</span></li>
+                            <li><span>今日帖数</span> <span class="stat-val">1,023</span></li>
+                            <li><span>最高在线</span> <span class="stat-val">3,456</span></li>
+                            <li><span>最高在线日期</span> <span class="stat-val">2010-03-15</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 主题（自定义CSS上传） -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-paint-brush"></i> 主题定制</div>
+                    <div class="block-body">
+                        <div class="css-upload-area">
+                            <p class="upload-hint">上传自定义CSS文件以个性化论坛外观：</p>
+                            <input type="file" id="cssFileInput" accept=".css" title="选择CSS文件">
+                            <div class="btn-row-upload">
+                                <button class="btn-upload" id="applyCssBtn"><i class="fa fa-upload"></i> 应用主题</button>
+                                <button class="btn-reset-css" id="resetCssBtn"><i class="fa fa-refresh"></i> 恢复默认</button>
+                            </div>
+                            <span class="css-status" id="cssStatus"><i class="fa fa-check-circle"></i> 自定义主题已应用</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 赞助 -->
+                <div class="sidebar-block">
+                    <div class="block-header"><i class="fa fa-heart"></i> 赞助我们</div>
+                    <div class="block-body">
+                        <p class="sponsor-text">
+                            <i class="fa fa-quote-left" style="color:#C0C8D4;font-size:10px;"></i>
+                            本论坛为非营利性公益平台，所有运营费用均由社区成员自愿赞助。您的支持将帮助我们维持服务器运行并持续改进服务。
+                            <i class="fa fa-quote-right" style="color:#C0C8D4;font-size:10px;"></i>
+                        </p>
+                        <a href="#" class="btn-sponsor"><i class="fa fa-heart"></i> 赞助论坛</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== 右栏 ===== -->
+            <div id="main-content">
+
+                <!-- 全局置顶 -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <i class="fa fa-thumb-tack"></i> 全局置顶
+                        <span class="section-badge">置顶</span>
+                    </div>
+                    <div class="section-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:32%;">帖文标题</th>
+                                    <th style="width:10%;">发布人</th>
+                                    <th style="width:10%;">发布时间</th>
+                                    <th style="width:10%;">所属板块</th>
+                                    <th style="width:9%;">标签</th>
+                                    <th style="width:7%;" class="num-cell"><i class="fa fa-eye"></i> 查看</th>
+                                    <th style="width:7%;" class="num-cell"><i class="fa fa-reply"></i> 回复</th>
+                                    <th style="width:7%;" class="num-cell"><i class="fa fa-thumbs-up"></i> 点赞</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="sticky-row">
+                                    <td>
+                                        <i class="fa fa-thumb-tack sticky-icon"></i>
+                                        <a href="#" class="post-title">HybridTopia 论坛总规</a>
+                                    </td>
+                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
+                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-01-15</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="tag-cell"><span class="mini-tag tag-announce">全局置顶</span><span class="mini-tag tag-announce">总规</span></td>
+                                    <td class="num-cell">15,230</td>
+                                    <td class="num-cell">89</td>
+                                    <td class="num-cell">256</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td>
+                                        <i class="fa fa-thumb-tack sticky-icon"></i>
+                                        <a href="#" class="post-title">[通知] 服务器维护公告 - 预计6月5日凌晨进行</a>
+                                    </td>
+                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
+                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-06-01</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="tag-cell"><span class="mini-tag tag-notice">维护</span></td>
+                                    <td class="num-cell">8,920</td>
+                                    <td class="num-cell">45</td>
+                                    <td class="num-cell">120</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td>
+                                        <i class="fa fa-thumb-tack sticky-icon"></i>
+                                        <a href="#" class="post-title">[指南] 新用户入门完全指南（必读）</a>
+                                    </td>
+                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Moderator</td>
+                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-03-20</td>
+                                    <td class="forum-name-cell"><a href="#">综合讨论区</a></td>
+                                    <td class="tag-cell"><span class="mini-tag tag-guide">教程</span></td>
+                                    <td class="num-cell">21,500</td>
+                                    <td class="num-cell">132</td>
+                                    <td class="num-cell">389</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td>
+                                        <i class="fa fa-thumb-tack sticky-icon"></i>
+                                        <a href="#" class="post-title">[公告] 关于严禁发布违规内容的通知</a>
+                                    </td>
+                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
+                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-02-10</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="tag-cell"><span class="mini-tag tag-announce">公告</span></td>
+                                    <td class="num-cell">11,000</td>
+                                    <td class="num-cell">67</td>
+                                    <td class="num-cell">198</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 板块列表 -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <i class="fa fa-list-alt"></i> 板块列表
+                    </div>
+                    <div class="section-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:16%;">板块名称</th>
+                                    <th style="width:9%;" class="num-cell">今日帖数</th>
+                                    <th style="width:9%;" class="num-cell">总帖数</th>
+                                    <th style="width:10%;" class="num-cell">总查看数</th>
+                                    <th style="width:26%;">最新帖文标题</th>
+                                    <th style="width:11%;">最新帖文发布人</th>
+                                    <th style="width:13%;">最新帖文发布时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-comments-o"></i> 综合讨论区</a></td>
+                                    <td class="num-cell">156</td>
+                                    <td class="num-cell">48,520</td>
+                                    <td class="num-cell">1,250,000</td>
+                                    <td><a href="#" class="post-title">关于近期社区发展的几点思考与建议</a></td>
+                                    <td class="user-cell">深海鱼</td>
+                                    <td class="time-cell">2024-07-11 14:32</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-code"></i> 技术交流区</a></td>
+                                    <td class="num-cell">89</td>
+                                    <td class="num-cell">32,100</td>
+                                    <td class="num-cell">890,000</td>
+                                    <td><a href="#" class="post-title">[教程] Linux服务器安全配置完全指南</a></td>
+                                    <td class="user-cell">GeekMaster</td>
+                                    <td class="time-cell">2024-07-11 13:18</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-cloud-download"></i> 资源分享区</a></td>
+                                    <td class="num-cell">234</td>
+                                    <td class="num-cell">67,800</td>
+                                    <td class="num-cell">2,100,000</td>
+                                    <td><a href="#" class="post-title">[分享] 珍藏多年的经典动漫原声合集</a></td>
+                                    <td class="user-cell">资源猎人</td>
+                                    <td class="time-cell">2024-07-11 15:02</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-film"></i> 动漫讨论区</a></td>
+                                    <td class="num-cell">67</td>
+                                    <td class="num-cell">18,900</td>
+                                    <td class="num-cell">560,000</td>
+                                    <td><a href="#" class="post-title">七月新番追番指南 &amp; 观后感交流</a></td>
+                                    <td class="user-cell">二次元旅人</td>
+                                    <td class="time-cell">2024-07-11 11:55</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-gamepad"></i> 游戏天地</a></td>
+                                    <td class="num-cell">198</td>
+                                    <td class="num-cell">54,300</td>
+                                    <td class="num-cell">1,670,000</td>
+                                    <td><a href="#" class="post-title">[攻略] 最新RPG大作全隐藏要素解锁攻略</a></td>
+                                    <td class="user-cell">手柄战士</td>
+                                    <td class="time-cell">2024-07-11 16:20</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-music"></i> 音乐交流</a></td>
+                                    <td class="num-cell">45</td>
+                                    <td class="num-cell">12,300</td>
+                                    <td class="num-cell">340,000</td>
+                                    <td><a href="#" class="post-title">独立音乐人作品推荐专楼</a></td>
+                                    <td class="user-cell">旋律捕手</td>
+                                    <td class="time-cell">2024-07-11 10:08</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-pencil"></i> 文学创作</a></td>
+                                    <td class="num-cell">32</td>
+                                    <td class="num-cell">8,700</td>
+                                    <td class="num-cell">280,000</td>
+                                    <td><a href="#" class="post-title">[原创] 短篇小说《星空下的约定》</a></td>
+                                    <td class="user-cell">墨香居士</td>
+                                    <td class="time-cell">2024-07-11 09:42</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-wrench"></i> 站务管理</a></td>
+                                    <td class="num-cell">12</td>
+                                    <td class="num-cell">3,200</td>
+                                    <td class="num-cell">150,000</td>
+                                    <td><a href="#" class="post-title">功能建议收集帖 - 欢迎提出宝贵意见</a></td>
+                                    <td class="user-cell">Admin</td>
+                                    <td class="time-cell">2024-07-10 18:30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 最新帖文 -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <i class="fa fa-clock-o"></i> 最新帖文
+                    </div>
+                    <div class="section-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:16%;">所属板块</th>
+                                    <th style="width:9%;" class="num-cell">板块今日帖</th>
+                                    <th style="width:9%;" class="num-cell">板块总帖</th>
+                                    <th style="width:10%;" class="num-cell">板块总查看</th>
+                                    <th style="width:26%;">帖文标题</th>
+                                    <th style="width:11%;">发布人</th>
+                                    <th style="width:13%;">发布时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">资源分享区</a></td>
+                                    <td class="num-cell">234</td>
+                                    <td class="num-cell">67,800</td>
+                                    <td class="num-cell">2,100,000</td>
+                                    <td><a href="#" class="post-title">[分享] 珍藏多年的经典动漫原声合集</a></td>
+                                    <td class="user-cell">资源猎人</td>
+                                    <td class="time-cell">2024-07-11 15:02</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">游戏天地</a></td>
+                                    <td class="num-cell">198</td>
+                                    <td class="num-cell">54,300</td>
+                                    <td class="num-cell">1,670,000</td>
+                                    <td><a href="#" class="post-title">[攻略] 最新RPG大作全隐藏要素解锁攻略</a></td>
+                                    <td class="user-cell">手柄战士</td>
+                                    <td class="time-cell">2024-07-11 16:20</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">综合讨论区</a></td>
+                                    <td class="num-cell">156</td>
+                                    <td class="num-cell">48,520</td>
+                                    <td class="num-cell">1,250,000</td>
+                                    <td><a href="#" class="post-title">关于近期社区发展的几点思考与建议</a></td>
+                                    <td class="user-cell">深海鱼</td>
+                                    <td class="time-cell">2024-07-11 14:32</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">技术交流区</a></td>
+                                    <td class="num-cell">89</td>
+                                    <td class="num-cell">32,100</td>
+                                    <td class="num-cell">890,000</td>
+                                    <td><a href="#" class="post-title">[教程] Linux服务器安全配置完全指南</a></td>
+                                    <td class="user-cell">GeekMaster</td>
+                                    <td class="time-cell">2024-07-11 13:18</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">动漫讨论区</a></td>
+                                    <td class="num-cell">67</td>
+                                    <td class="num-cell">18,900</td>
+                                    <td class="num-cell">560,000</td>
+                                    <td><a href="#" class="post-title">七月新番追番指南 &amp; 观后感交流</a></td>
+                                    <td class="user-cell">二次元旅人</td>
+                                    <td class="time-cell">2024-07-11 11:55</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">音乐交流</a></td>
+                                    <td class="num-cell">45</td>
+                                    <td class="num-cell">12,300</td>
+                                    <td class="num-cell">340,000</td>
+                                    <td><a href="#" class="post-title">独立音乐人作品推荐专楼</a></td>
+                                    <td class="user-cell">旋律捕手</td>
+                                    <td class="time-cell">2024-07-11 10:08</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">文学创作</a></td>
+                                    <td class="num-cell">32</td>
+                                    <td class="num-cell">8,700</td>
+                                    <td class="num-cell">280,000</td>
+                                    <td><a href="#" class="post-title">[原创] 短篇小说《星空下的约定》</a></td>
+                                    <td class="user-cell">墨香居士</td>
+                                    <td class="time-cell">2024-07-11 09:42</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">12</td>
+                                    <td class="num-cell">3,200</td>
+                                    <td class="num-cell">150,000</td>
+                                    <td><a href="#" class="post-title">功能建议收集帖 - 欢迎提出宝贵意见</a></td>
+                                    <td class="user-cell">Admin</td>
+                                    <td class="time-cell">2024-07-10 18:30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== 页脚 ========== -->
+        <div id="footer">
+            <p>
+                <a href="#">关于我们</a> <span class="footer-divider">|</span>
+                <a href="#">联系方式</a> <span class="footer-divider">|</span>
+                <a href="#">隐私政策</a> <span class="footer-divider">|</span>
+                <a href="#">使用条款</a> <span class="footer-divider">|</span>
+                <a href="#">帮助中心</a>
+            </p>
+            <p>
+                &copy; 2010-2024 <strong>ZH.HybridTopia</strong> &nbsp;|&nbsp; Powered by <strong>HT Platform 2.3</strong>
+            </p>
+            <p style="color:#A0B5C8;font-size:10px;">
+                <i class="fa fa-shield"></i> 本论坛为非营利性公益社区 &nbsp;|&nbsp;
+                <i class="fa fa-server"></i> 服务器由社区赞助运营 &nbsp;|&nbsp;
+                <i class="fa fa-clock-o"></i> 页面加载于 <span id="loadTime">--</span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Toast 提示 -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        (function() {
+            // ============ 页面加载时间 ============
+            const loadTimeEl = document.getElementById('loadTime');
+            if (loadTimeEl) {
+                const now = new Date();
+                const timeStr = now.getFullYear() + '-' +
+                    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+                    String(now.getDate()).padStart(2, '0') + ' ' +
+                    String(now.getHours()).padStart(2, '0') + ':' +
+                    String(now.getMinutes()).padStart(2, '0') + ':' +
+                    String(now.getSeconds()).padStart(2, '0');
+                loadTimeEl.textContent = timeStr;
+            }
+
+            // ============ Toast 提示 ============
+            const toast = document.getElementById('toast');
+            let toastTimer = null;
+
+            function showToast(msg, type) {
+                if (toastTimer) clearTimeout(toastTimer);
+                toast.textContent = msg;
+                toast.className = 'toast ' + (type || '');
+                // 强制回流后添加show
+                void toast.offsetWidth;
+                toast.classList.add('show');
+                toastTimer = setTimeout(function() {
+                    toast.classList.remove('show');
+                }, 2500);
+            }
+
+            // ============ CSS自定义上传 ============
+            const cssFileInput = document.getElementById('cssFileInput');
+            const applyCssBtn = document.getElementById('applyCssBtn');
+            const resetCssBtn = document.getElementById('resetCssBtn');
+            const cssStatus = document.getElementById('cssStatus');
+            const STORAGE_KEY = 'hybridtopia_custom_css';
+            let customStyleEl = null;
+
+            // 创建或获取自定义样式元素
+            function getOrCreateStyleEl() {
+                if (!customStyleEl) {
+                    customStyleEl = document.getElementById('custom-css-style');
+                    if (!customStyleEl) {
+                        customStyleEl = document.createElement('style');
+                        customStyleEl.id = 'custom-css-style';
+                        customStyleEl.type = 'text/css';
+                        document.head.appendChild(customStyleEl);
+                    }
+                }
+                return customStyleEl;
+            }
+
+            // 应用CSS文本
+            function applyCssText(cssText) {
+                const styleEl = getOrCreateStyleEl();
+                styleEl.textContent = cssText;
+                cssStatus.classList.add('active');
+                // 保存到localStorage
+                try {
+                    localStorage.setItem(STORAGE_KEY, cssText);
+                } catch (e) {
+                    // localStorage不可用，忽略
+                }
+            }
+
+            // 清除自定义CSS
+            function clearCustomCss() {
+                if (customStyleEl) {
+                    customStyleEl.textContent = '';
+                }
+                const el = document.getElementById('custom-css-style');
+                if (el) {
+                    el.textContent = '';
+                }
+                cssStatus.classList.remove('active');
+                try {
+                    localStorage.removeItem(STORAGE_KEY);
+                } catch (e) {
+                    // 忽略
+                }
+                if (cssFileInput) cssFileInput.value = '';
+            }
+
+            // 应用CSS按钮点击
+            if (applyCssBtn && cssFileInput) {
+                applyCssBtn.addEventListener('click', function() {
+                    const file = cssFileInput.files[0];
+                    if (!file) {
+                        showToast('请先选择一个CSS文件', 'warning');
+                        return;
+                    }
+                    if (!file.name.toLowerCase().endsWith('.css')) {
+                        showToast('请选择有效的.css文件', 'warning');
+                        return;
+                    }
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const cssText = e.target.result;
+                        applyCssText(cssText);
+                        showToast('自定义主题已应用！');
+                    };
+                    reader.onerror = function() {
+                        showToast('文件读取失败，请重试', 'warning');
+                    };
+                    reader.readAsText(file, 'UTF-8');
+                });
+            }
+
+            // 恢复默认按钮
+            if (resetCssBtn) {
+                resetCssBtn.addEventListener('click', function() {
+                    clearCustomCss();
+                    showToast('已恢复默认主题');
+                });
+            }
+
+            // 页面加载时从localStorage恢复CSS
+            (function restoreCssFromStorage() {
+                try {
+                    const savedCss = localStorage.getItem(STORAGE_KEY);
+                    if (savedCss && savedCss.trim().length > 0) {
+                        const styleEl = getOrCreateStyleEl();
+                        styleEl.textContent = savedCss;
+                        cssStatus.classList.add('active');
+                    }
+                } catch (e) {
+                    // 忽略
+                }
+            })();
+
+            // ============ 表格行hover微效 ============
+            const allDataTables = document.querySelectorAll('table.data-table tbody tr');
+            allDataTables.forEach(function(row) {
+                row.addEventListener('mouseenter', function() {
+                    if (!row.classList.contains('sticky-row')) {
+                        row.style.transition = 'background 0.12s ease';
+                    }
+                });
+            });
+
+            // ============ 模拟导航链接点击 ============
+            const allNavLinks = document.querySelectorAll(
+                '#navbar a, #breadcrumb a, .forum-quick-list a, .tag-cloud a, .rss-link, .btn-sponsor, .btn-sm, #footer a, table.data-table .post-title, table.data-table .forum-name-cell a'
+                );
+            allNavLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = link.getAttribute('href');
+                    if (href === '#') {
+                        e.preventDefault();
+                        const text = link.textContent.trim().substring(0, 40);
+                        showToast('导航链接: ' + (text || '未知页面') + ' (演示页面)');
+                    }
+                });
+            });
+
+            // ============ 登录按钮点击 ============
+            const loginBtns = document.querySelectorAll('.btn-login, .btn-login-sm');
+            loginBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showToast('登录功能 - 演示页面，暂未实现');
+                });
+            });
+
+            // ============ 注册按钮 ============
+            const registerBtns = document.querySelectorAll('.btn-register-sm');
+            registerBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showToast('注册功能 - 演示页面，暂未实现');
+                });
+            });
+
+            console.log('%c ZH.HybridTopia %c HT Platform 2.3 %c 论坛首页已就绪 ',
+                'background:#1a3c5e;color:#E8F0F8;padding:4px 8px;font-weight:bold;border-radius:3px 0 0 3px;',
+                'background:#2B6DA8;color:#FFF;padding:4px 8px;font-weight:bold;',
+                'background:#F0F5FA;color:#3A5A7C;padding:4px 8px;border-radius:0 3px 3px 0;');
+            console.log('%c 模仿2010年Discuz!风格论坛 | FontAwesome 4.7 | 公益社区 ',
+                'color:#6B7D8E;font-size:11px;');
+        })();
+    </script>
+</body>
+</html>
