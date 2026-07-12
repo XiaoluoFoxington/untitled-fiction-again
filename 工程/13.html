@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZH.HybridTopia - HT Platform 2.3</title>
+    <title>ZH.HybridTopia - 主页</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         :root {
@@ -699,7 +699,7 @@
             font-weight: 600;
         }
         table.data-table .num-cell {
-            text-align: center;
+            text-align: right;
             font-weight: 600;
             color: #5A7A95;
             font-size: var(--font-size-xs);
@@ -844,7 +844,7 @@
 
         <!-- ========== 面包屑 ========== -->
         <div id="breadcrumb">
-            <i class="fa fa-map-marker"></i> 当前位置：<a href="#">主页</a> <i class="fa fa-angle-right"></i> 论坛首页
+            <i class="fa fa-map-marker"></i> 当前位置：<a href="#">HybridTopia</a> <i class="fa fa-angle-right"></i> <a href="#">ZH</a> <i class="fa fa-angle-right"></i> 主页</a>
         </div>
 
         <!-- ========== 主容器 ========== -->
@@ -871,7 +871,7 @@
 
                 <!-- 板块快捷列表 -->
                 <div class="sidebar-block">
-                    <div class="block-header"><i class="fa fa-folder-open"></i> 板块导航</div>
+                    <div class="block-header"><i class="fa fa-folder-open"></i> 板块</div>
                     <div class="block-body">
                         <ul class="forum-quick-list">
                             <li><a href="#">综合讨论</a> <span class="count-badge">48,520</span></li>
@@ -879,12 +879,13 @@
                             <li><a href="#">资源分享</a> <span class="count-badge">67,800</span></li>
                             <li><a href="#">国外精华帖文搬运</a> <span class="count-badge">18,900</span></li>
                             <li><a href="#">适兽化</a> <span class="count-badge">54,300</span></li>
+                            <li><a href="#">兽人生物学</a> <span class="count-badge">24,300</span></li>
                             <li><a href="#">站务管理</a> <span class="count-badge">3,200</span></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- 热门标签 -->
+                <!-- 热门标签 --><!--
                 <div class="sidebar-block">
                     <div class="block-header"><i class="fa fa-tags"></i> 热门标签</div>
                     <div class="block-body">
@@ -901,7 +902,7 @@
                             <a href="#" class="tag">投票</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <!-- RSS -->
                 <div class="sidebar-block">
@@ -965,170 +966,29 @@
                 <div class="content-section">
                     <div class="section-header">
                         <i class="fa fa-thumb-tack"></i> 全局置顶
-                        <span class="section-badge">置顶</span>
                     </div>
                     <div class="section-body">
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th style="width:32%;">帖文标题</th>
-                                    <th style="width:10%;">发布人</th>
-                                    <th style="width:10%;">发布时间</th>
-                                    <th style="width:10%;">所属板块</th>
-                                    <th style="width:9%;">标签</th>
-                                    <th style="width:7%;" class="num-cell"><i class="fa fa-eye"></i> 查看</th>
-                                    <th style="width:7%;" class="num-cell"><i class="fa fa-reply"></i> 回复</th>
-                                    <th style="width:7%;" class="num-cell"><i class="fa fa-thumbs-up"></i> 点赞</th>
+                                    <th><i class="fa fa-comment-o"></i> 帖文标题</th>
+                                    <th><i class="fa fa-user-circle-o"></i> 发布人</th>
+                                    <th><i class="fa fa-clock-o"></i> 发布时间</th>
+                                    <th><i class="fa fa-folder-open"></i> 所属板块</th>
+                                    <th><i class="fa fa-eye"></i> 查看</th>
+                                    <th><i class="fa fa-reply"></i> 回复</th>
+                                    <th><i class="fa fa-thumbs-up"></i> 点赞</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="sticky-row">
-                                    <td>
-                                        <i class="fa fa-thumb-tack sticky-icon"></i>
-                                        <a href="#" class="post-title">HybridTopia 论坛总规</a>
-                                    </td>
-                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
-                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-01-15</td>
+                                    <td><a href="#" class="post-title">HybridTopia 论坛总规</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
+                                    <td class="time-cell">2024-01-15</td>
                                     <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="tag-cell"><span class="mini-tag tag-announce">全局置顶</span><span class="mini-tag tag-announce">总规</span></td>
                                     <td class="num-cell">15,230</td>
                                     <td class="num-cell">89</td>
                                     <td class="num-cell">256</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td>
-                                        <i class="fa fa-thumb-tack sticky-icon"></i>
-                                        <a href="#" class="post-title">[通知] 服务器维护公告 - 预计6月5日凌晨进行</a>
-                                    </td>
-                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
-                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-06-01</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="tag-cell"><span class="mini-tag tag-notice">维护</span></td>
-                                    <td class="num-cell">8,920</td>
-                                    <td class="num-cell">45</td>
-                                    <td class="num-cell">120</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td>
-                                        <i class="fa fa-thumb-tack sticky-icon"></i>
-                                        <a href="#" class="post-title">[指南] 新用户入门完全指南（必读）</a>
-                                    </td>
-                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Moderator</td>
-                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-03-20</td>
-                                    <td class="forum-name-cell"><a href="#">综合讨论区</a></td>
-                                    <td class="tag-cell"><span class="mini-tag tag-guide">教程</span></td>
-                                    <td class="num-cell">21,500</td>
-                                    <td class="num-cell">132</td>
-                                    <td class="num-cell">389</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td>
-                                        <i class="fa fa-thumb-tack sticky-icon"></i>
-                                        <a href="#" class="post-title">[公告] 关于严禁发布违规内容的通知</a>
-                                    </td>
-                                    <td class="user-cell"><i class="fa fa-user-circle-o"></i> Admin</td>
-                                    <td class="time-cell"><i class="fa fa-clock-o"></i> 2024-02-10</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="tag-cell"><span class="mini-tag tag-announce">公告</span></td>
-                                    <td class="num-cell">11,000</td>
-                                    <td class="num-cell">67</td>
-                                    <td class="num-cell">198</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- 板块列表 -->
-                <div class="content-section">
-                    <div class="section-header">
-                        <i class="fa fa-list-alt"></i> 板块列表
-                    </div>
-                    <div class="section-body">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th style="width:16%;">板块名称</th>
-                                    <th style="width:9%;" class="num-cell">今日帖数</th>
-                                    <th style="width:9%;" class="num-cell">总帖数</th>
-                                    <th style="width:10%;" class="num-cell">总查看数</th>
-                                    <th style="width:26%;">最新帖文标题</th>
-                                    <th style="width:11%;">最新帖文发布人</th>
-                                    <th style="width:13%;">最新帖文发布时间</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-comments-o"></i> 综合讨论区</a></td>
-                                    <td class="num-cell">156</td>
-                                    <td class="num-cell">48,520</td>
-                                    <td class="num-cell">1,250,000</td>
-                                    <td><a href="#" class="post-title">关于近期社区发展的几点思考与建议</a></td>
-                                    <td class="user-cell">深海鱼</td>
-                                    <td class="time-cell">2024-07-11 14:32</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-code"></i> 技术交流区</a></td>
-                                    <td class="num-cell">89</td>
-                                    <td class="num-cell">32,100</td>
-                                    <td class="num-cell">890,000</td>
-                                    <td><a href="#" class="post-title">[教程] Linux服务器安全配置完全指南</a></td>
-                                    <td class="user-cell">GeekMaster</td>
-                                    <td class="time-cell">2024-07-11 13:18</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-cloud-download"></i> 资源分享区</a></td>
-                                    <td class="num-cell">234</td>
-                                    <td class="num-cell">67,800</td>
-                                    <td class="num-cell">2,100,000</td>
-                                    <td><a href="#" class="post-title">[分享] 珍藏多年的经典动漫原声合集</a></td>
-                                    <td class="user-cell">资源猎人</td>
-                                    <td class="time-cell">2024-07-11 15:02</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-film"></i> 动漫讨论区</a></td>
-                                    <td class="num-cell">67</td>
-                                    <td class="num-cell">18,900</td>
-                                    <td class="num-cell">560,000</td>
-                                    <td><a href="#" class="post-title">七月新番追番指南 &amp; 观后感交流</a></td>
-                                    <td class="user-cell">二次元旅人</td>
-                                    <td class="time-cell">2024-07-11 11:55</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-gamepad"></i> 游戏天地</a></td>
-                                    <td class="num-cell">198</td>
-                                    <td class="num-cell">54,300</td>
-                                    <td class="num-cell">1,670,000</td>
-                                    <td><a href="#" class="post-title">[攻略] 最新RPG大作全隐藏要素解锁攻略</a></td>
-                                    <td class="user-cell">手柄战士</td>
-                                    <td class="time-cell">2024-07-11 16:20</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-music"></i> 音乐交流</a></td>
-                                    <td class="num-cell">45</td>
-                                    <td class="num-cell">12,300</td>
-                                    <td class="num-cell">340,000</td>
-                                    <td><a href="#" class="post-title">独立音乐人作品推荐专楼</a></td>
-                                    <td class="user-cell">旋律捕手</td>
-                                    <td class="time-cell">2024-07-11 10:08</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-pencil"></i> 文学创作</a></td>
-                                    <td class="num-cell">32</td>
-                                    <td class="num-cell">8,700</td>
-                                    <td class="num-cell">280,000</td>
-                                    <td><a href="#" class="post-title">[原创] 短篇小说《星空下的约定》</a></td>
-                                    <td class="user-cell">墨香居士</td>
-                                    <td class="time-cell">2024-07-11 09:42</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#"><i class="fa fa-wrench"></i> 站务管理</a></td>
-                                    <td class="num-cell">12</td>
-                                    <td class="num-cell">3,200</td>
-                                    <td class="num-cell">150,000</td>
-                                    <td><a href="#" class="post-title">功能建议收集帖 - 欢迎提出宝贵意见</a></td>
-                                    <td class="user-cell">Admin</td>
-                                    <td class="time-cell">2024-07-10 18:30</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1144,87 +1004,57 @@
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th style="width:16%;">所属板块</th>
-                                    <th style="width:9%;" class="num-cell">板块今日帖</th>
-                                    <th style="width:9%;" class="num-cell">板块总帖</th>
-                                    <th style="width:10%;" class="num-cell">板块总查看</th>
-                                    <th style="width:26%;">帖文标题</th>
-                                    <th style="width:11%;">发布人</th>
-                                    <th style="width:13%;">发布时间</th>
+                                    <th><i class="fa fa-comment-o"></i> 帖文标题</th>
+                                    <th><i class="fa fa-user-circle-o"></i> 发布人</th>
+                                    <th><i class="fa fa-clock-o"></i> 发布时间</th>
+                                    <th><i class="fa fa-folder-open"></i> 所属板块</th>
+                                    <th><i class="fa fa-eye"></i> 查看</th>
+                                    <th><i class="fa fa-reply"></i> 回复</th>
+                                    <th><i class="fa fa-thumbs-up"></i> 点赞</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="forum-name-cell"><a href="#">资源分享区</a></td>
-                                    <td class="num-cell">234</td>
-                                    <td class="num-cell">67,800</td>
-                                    <td class="num-cell">2,100,000</td>
-                                    <td><a href="#" class="post-title">[分享] 珍藏多年的经典动漫原声合集</a></td>
-                                    <td class="user-cell">资源猎人</td>
-                                    <td class="time-cell">2024-07-11 15:02</td>
+                                    <td><a href="#" class="post-title">HybridTopia 论坛总规</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
+                                    <td class="time-cell">2024-01-15</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">15,230</td>
+                                    <td class="num-cell">89</td>
+                                    <td class="num-cell">256</td>
                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 板块列表 -->
+                <div class="content-section">
+                    <div class="section-header">
+                        <i class="fa fa-list-alt"></i> 板块列表
+                    </div>
+                    <div class="section-body">
+                        <table class="data-table">
+                            <thead>
                                 <tr>
-                                    <td class="forum-name-cell"><a href="#">游戏天地</a></td>
-                                    <td class="num-cell">198</td>
-                                    <td class="num-cell">54,300</td>
-                                    <td class="num-cell">1,670,000</td>
-                                    <td><a href="#" class="post-title">[攻略] 最新RPG大作全隐藏要素解锁攻略</a></td>
-                                    <td class="user-cell">手柄战士</td>
-                                    <td class="time-cell">2024-07-11 16:20</td>
+                                    <th>板块名称</th>
+                                    <th class="num-cell">今日帖数</th>
+                                    <th class="num-cell">总帖数</th>
+                                    <th class="num-cell">总查看数</th>
+                                    <th>最新帖文标题</th>
+                                    <th>最新帖文发布人</th>
+                                    <th>最新帖文发布时间</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <td class="forum-name-cell"><a href="#">综合讨论区</a></td>
+                                    <td class="forum-name-cell"><a href="#"></i>综合讨论区</a></td>
                                     <td class="num-cell">156</td>
                                     <td class="num-cell">48,520</td>
                                     <td class="num-cell">1,250,000</td>
                                     <td><a href="#" class="post-title">关于近期社区发展的几点思考与建议</a></td>
                                     <td class="user-cell">深海鱼</td>
                                     <td class="time-cell">2024-07-11 14:32</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">技术交流区</a></td>
-                                    <td class="num-cell">89</td>
-                                    <td class="num-cell">32,100</td>
-                                    <td class="num-cell">890,000</td>
-                                    <td><a href="#" class="post-title">[教程] Linux服务器安全配置完全指南</a></td>
-                                    <td class="user-cell">GeekMaster</td>
-                                    <td class="time-cell">2024-07-11 13:18</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">动漫讨论区</a></td>
-                                    <td class="num-cell">67</td>
-                                    <td class="num-cell">18,900</td>
-                                    <td class="num-cell">560,000</td>
-                                    <td><a href="#" class="post-title">七月新番追番指南 &amp; 观后感交流</a></td>
-                                    <td class="user-cell">二次元旅人</td>
-                                    <td class="time-cell">2024-07-11 11:55</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">音乐交流</a></td>
-                                    <td class="num-cell">45</td>
-                                    <td class="num-cell">12,300</td>
-                                    <td class="num-cell">340,000</td>
-                                    <td><a href="#" class="post-title">独立音乐人作品推荐专楼</a></td>
-                                    <td class="user-cell">旋律捕手</td>
-                                    <td class="time-cell">2024-07-11 10:08</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">文学创作</a></td>
-                                    <td class="num-cell">32</td>
-                                    <td class="num-cell">8,700</td>
-                                    <td class="num-cell">280,000</td>
-                                    <td><a href="#" class="post-title">[原创] 短篇小说《星空下的约定》</a></td>
-                                    <td class="user-cell">墨香居士</td>
-                                    <td class="time-cell">2024-07-11 09:42</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">12</td>
-                                    <td class="num-cell">3,200</td>
-                                    <td class="num-cell">150,000</td>
-                                    <td><a href="#" class="post-title">功能建议收集帖 - 欢迎提出宝贵意见</a></td>
-                                    <td class="user-cell">Admin</td>
-                                    <td class="time-cell">2024-07-10 18:30</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1236,21 +1066,10 @@
 
         <!-- ========== 页脚 ========== -->
         <div id="footer">
-            <p>
-                <a href="#">关于我们</a> <span class="footer-divider">|</span>
-                <a href="#">联系方式</a> <span class="footer-divider">|</span>
-                <a href="#">隐私政策</a> <span class="footer-divider">|</span>
-                <a href="#">使用条款</a> <span class="footer-divider">|</span>
-                <a href="#">帮助中心</a>
-            </p>
-            <p>
-                &copy; 2010-2024 <strong>ZH.HybridTopia</strong> &nbsp;|&nbsp; Powered by <strong>HT Platform 2.3</strong>
-            </p>
-            <p style="color:#A0B5C8;font-size:10px;">
-                <i class="fa fa-shield"></i> 本论坛为非营利性公益社区 &nbsp;|&nbsp;
-                <i class="fa fa-server"></i> 服务器由社区赞助运营 &nbsp;|&nbsp;
-                <i class="fa fa-clock-o"></i> 页面加载于 <span id="loadTime">--</span>
-            </p>
+            <p>&copy; 2016-2026 <strong>ZH.HybridTopia</strong></P>
+            <p>Powered by <strong>HT Platform 2.3</strong>(37w46be)</p>
+            <p>所有发布内容版权归发布者所有</p>
+            <p><i class="fa fa-clock-o"></i> 页面加载于 <span id="loadTime">--</span></p>
         </div>
 
     </div>
