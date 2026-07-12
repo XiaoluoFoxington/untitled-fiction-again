@@ -742,6 +742,32 @@
             margin-bottom: 8px;
             opacity: 0.5;
         }
+        .load-more-wrap {
+            text-align: center;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-light);
+        }
+        .btn-load-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 24px;
+            font-size: var(--font-size-sm);
+            color: var(--text-link);
+            background: #F4F8FC;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all var(--transition-fast);
+            letter-spacing: 0.3px;
+        }
+        .btn-load-more:hover {
+            background: #E8F0F8;
+            border-color: #A0BBD4;
+            color: var(--text-link-hover);
+        }
 
         /* ============ 页脚 ============ */
         #footer {
@@ -874,13 +900,13 @@
                     <div class="block-header"><i class="fa fa-folder-open"></i> 板块</div>
                     <div class="block-body">
                         <ul class="forum-quick-list">
-                            <li><a href="#">综合讨论</a> <span class="count-badge">48,520</span></li>
-                            <li><a href="#">技术交流</a> <span class="count-badge">32,100</span></li>
-                            <li><a href="#">资源分享</a> <span class="count-badge">67,800</span></li>
-                            <li><a href="#">国外精华帖文搬运</a> <span class="count-badge">18,900</span></li>
-                            <li><a href="#">适兽化</a> <span class="count-badge">54,300</span></li>
-                            <li><a href="#">兽人生物学</a> <span class="count-badge">24,300</span></li>
-                            <li><a href="#">站务管理</a> <span class="count-badge">3,200</span></li>
+                            <li><a href="#">综合讨论</a> <span class="count-badge">485</span></li>
+                            <li><a href="#">技术交流</a> <span class="count-badge">221</span></li>
+                            <li><a href="#">资源分享</a> <span class="count-badge">378</span></li>
+                            <li><a href="#">国外精华帖文搬运</a> <span class="count-badge">180</span></li>
+                            <li><a href="#">适兽化</a> <span class="count-badge">543</span></li>
+                            <li><a href="#">兽人生物学</a> <span class="count-badge">243</span></li>
+                            <li><a href="#">站务管理</a> <span class="count-badge">83</span></li>
                         </ul>
                     </div>
                 </div>
@@ -918,12 +944,11 @@
                     <div class="block-header"><i class="fa fa-bar-chart"></i> 论坛统计</div>
                     <div class="block-body">
                         <ul class="stats-list">
-                            <li><span>总帖文数</span> <span class="stat-val">245,820</span></li>
-                            <li><span>总主题数</span> <span class="stat-val">38,450</span></li>
-                            <li><span>总用户数</span> <span class="stat-val">12,380</span></li>
-                            <li><span>今日帖数</span> <span class="stat-val">1,023</span></li>
-                            <li><span>最高在线</span> <span class="stat-val">3,456</span></li>
-                            <li><span>最高在线日期</span> <span class="stat-val">2010-03-15</span></li>
+                            <li><span>总帖文数</span> <span class="stat-val">2,133</span></li>
+                            <li><span>总用户数</span> <span class="stat-val">5,560</span></li>
+                            <li><span>今日帖数</span> <span class="stat-val">87</span></li>
+                            <li><span>最高在线</span> <span class="stat-val">252</span></li>
+                            <li><span>最高在线日期</span> <span class="stat-val">2023-03-15</span></li>
                         </ul>
                     </div>
                 </div>
@@ -982,13 +1007,40 @@
                             </thead>
                             <tbody>
                                 <tr class="sticky-row">
-                                    <td><a href="#" class="post-title">HybridTopia 论坛总规</a></td>
+                                    <td><a href="#" class="post-title">HybridTopia 论坛总规（第4版）</a></td>
                                     <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
-                                    <td class="time-cell">2024-01-15</td>
+                                    <td class="time-cell">2024-01-15 08:00</td>
                                     <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">15,230</td>
+                                    <td class="num-cell">4,230</td>
                                     <td class="num-cell">89</td>
-                                    <td class="num-cell">256</td>
+                                    <td class="num-cell">656</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td><a href="#" class="post-title">HT Platform 2.3 升级公告与新功能说明</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">Yhsux</a></td>
+                                    <td class="time-cell">2021-10-03 02:26</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">691</td>
+                                    <td class="num-cell">42</td>
+                                    <td class="num-cell">134</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td><a href="#" class="post-title">BBCode 使用手册</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
+                                    <td class="time-cell">2017-02-23 15:09</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">3,670</td>
+                                    <td class="num-cell">173</td>
+                                    <td class="num-cell">812</td>
+                                </tr>
+                                <tr class="sticky-row">
+                                    <td><a href="#" class="post-title">新人必读：注册邀请码使用说明与社区守则</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
+                                    <td class="time-cell">2017-02-14 12:48</td>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">2,574</td>
+                                    <td class="num-cell">45</td>
+                                    <td class="num-cell">398</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1015,16 +1067,55 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><a href="#" class="post-title">HybridTopia 论坛总规</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
-                                    <td class="time-cell">2024-01-15</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">15,230</td>
+                                    <td><a href="#" class="post-title">【适兽化】分享一家新开的配有兽人椅的馄饨店</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">爱吃面的狐</a></td>
+                                    <td class="time-cell">2024-07-11 13:45</td>
+                                    <td class="forum-name-cell"><a href="#">适兽化</a></td>
+                                    <td class="num-cell">342</td>
+                                    <td class="num-cell">28</td>
+                                    <td class="num-cell">67</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="post-title">【地理迷盒】商场地下停车场B区有人做过迷盒吗？</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">地下探索者</a></td>
+                                    <td class="time-cell">2024-07-11 11:20</td>
+                                    <td class="forum-name-cell"><a href="#">综合讨论</a></td>
+                                    <td class="num-cell">567</td>
+                                    <td class="num-cell">43</td>
                                     <td class="num-cell">89</td>
-                                    <td class="num-cell">256</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="post-title">SpreadCraftLauncher 下载站已更新至 2.1.0</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">{NN}</a></td>
+                                    <td class="time-cell">2024-07-10 22:15</td>
+                                    <td class="forum-name-cell"><a href="#">技术交流</a></td>
+                                    <td class="num-cell">891</td>
+                                    <td class="num-cell">56</td>
+                                    <td class="num-cell">145</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="post-title">【搬运】WildDream 平台优秀兽人主题漫画推荐</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">搬运工007</a></td>
+                                    <td class="time-cell">2024-07-10 18:30</td>
+                                    <td class="forum-name-cell"><a href="#">国外精华帖文搬运</a></td>
+                                    <td class="num-cell">1,234</td>
+                                    <td class="num-cell">72</td>
+                                    <td class="num-cell">203</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="post-title">夏天到了，多毛类兽人种都是怎么防暑的？</a></td>
+                                    <td class="user-cell"><a href="#" class="post-title">怕热的北极狐</a></td>
+                                    <td class="time-cell">2024-07-10 16:08</td>
+                                    <td class="forum-name-cell"><a href="#">兽人生物学</a></td>
+                                    <td class="num-cell">1,567</td>
+                                    <td class="num-cell">134</td>
+                                    <td class="num-cell">278</td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="load-more-wrap">
+                            <button class="btn-load-more"><i class="fa fa-chevron-down"></i> 加载更多</button>
+                        </div>
                     </div>
                 </div>
 
@@ -1048,13 +1139,67 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="forum-name-cell"><a href="#"></i>综合讨论区</a></td>
-                                    <td class="num-cell">156</td>
+                                    <td class="forum-name-cell"><a href="#">综合讨论</a></td>
+                                    <td class="num-cell">187</td>
                                     <td class="num-cell">48,520</td>
                                     <td class="num-cell">1,250,000</td>
-                                    <td><a href="#" class="post-title">关于近期社区发展的几点思考与建议</a></td>
-                                    <td class="user-cell">深海鱼</td>
-                                    <td class="time-cell">2024-07-11 14:32</td>
+                                    <td><a href="#" class="post-title">【地理迷盒】商场地下停车场B区有人做过迷盒吗？</a></td>
+                                    <td class="user-cell">地下探索者</td>
+                                    <td class="time-cell">2024-07-11 11:20</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">技术交流</a></td>
+                                    <td class="num-cell">98</td>
+                                    <td class="num-cell">32,100</td>
+                                    <td class="num-cell">890,000</td>
+                                    <td><a href="#" class="post-title">SpreadCraftLauncher 下载站已更新至 2.1.0</a></td>
+                                    <td class="user-cell">{NN}</td>
+                                    <td class="time-cell">2024-07-10 22:15</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">资源分享</a></td>
+                                    <td class="num-cell">245</td>
+                                    <td class="num-cell">67,800</td>
+                                    <td class="num-cell">2,340,000</td>
+                                    <td><a href="#" class="post-title">【资源】Mindustry 自定义地图合集包 V3 发布</a></td>
+                                    <td class="user-cell">红石工程师</td>
+                                    <td class="time-cell">2024-07-11 09:30</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">国外精华帖文搬运</a></td>
+                                    <td class="num-cell">56</td>
+                                    <td class="num-cell">18,900</td>
+                                    <td class="num-cell">560,000</td>
+                                    <td><a href="#" class="post-title">【搬运】WildDream 平台优秀兽人主题漫画推荐</a></td>
+                                    <td class="user-cell">搬运工007</td>
+                                    <td class="time-cell">2024-07-10 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">适兽化</a></td>
+                                    <td class="num-cell">312</td>
+                                    <td class="num-cell">54,300</td>
+                                    <td class="num-cell">1,780,000</td>
+                                    <td><a href="#" class="post-title">【适兽化】分享一家新开的配有兽人椅的馄饨店</a></td>
+                                    <td class="user-cell">爱吃面的狐</td>
+                                    <td class="time-cell">2024-07-11 13:45</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">兽人生物学</a></td>
+                                    <td class="num-cell">134</td>
+                                    <td class="num-cell">24,300</td>
+                                    <td class="num-cell">720,000</td>
+                                    <td><a href="#" class="post-title">夏天到了，多毛类兽人种都是怎么防暑的？</a></td>
+                                    <td class="user-cell">怕热的北极狐</td>
+                                    <td class="time-cell">2024-07-10 16:08</td>
+                                </tr>
+                                <tr>
+                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
+                                    <td class="num-cell">12</td>
+                                    <td class="num-cell">3,200</td>
+                                    <td class="num-cell">98,000</td>
+                                    <td><a href="#" class="post-title">HT Platform 2.3 升级公告与新功能说明</a></td>
+                                    <td class="user-cell">Admin</td>
+                                    <td class="time-cell">2024-03-10</td>
                                 </tr>
                             </tbody>
                         </table>
