@@ -1,0 +1,187 @@
+{
+  "site": {
+    "prefix": "ZH.",
+    "name": "HybridTopia",
+    "version": "HT Platform 2.3",
+    "pageTitle": "ZH.HybridTopia - 主页",
+    "copyright": "© 2016-2026 ZH.HybridTopia",
+    "poweredBy": "HT Platform 2.3 (37w46be)",
+    "footerText": "所有发布内容版权归发布者所有",
+    "loadTimeText": "页面加载于 7月7日 00:35"
+  },
+  "sidebar": {
+    "userInfo": {
+      "username": "游客",
+      "status": "当前未登录"
+    },
+    "forums": [
+      { "name": "综合讨论", "count": 485 },
+      { "name": "技术交流", "count": 221 },
+      { "name": "资源分享", "count": 378 },
+      { "name": "国外精华帖文搬运", "count": 180 },
+      { "name": "适兽化", "count": 543 },
+      { "name": "兽人生物学", "count": 243 },
+      { "name": "站务管理", "count": 83 }
+    ],
+    "stats": {
+      "totalPosts": "2,133",
+      "totalUsers": "5,560",
+      "todayPosts": "0",
+      "yesterdayPosts": "8",
+      "maxOnline": "252",
+      "maxOnlineDate": "2023-03-15"
+    }
+  },
+  "tables": {
+    "stickyPosts": [
+      {
+        "title": "HybridTopia 论坛总规（第4版）",
+        "author": "Admin",
+        "time": "2024-01-15 08:00",
+        "forum": "站务管理",
+        "views": "4,230",
+        "replies": "89",
+        "likes": "656"
+      },
+      {
+        "title": "HT Platform 2.3 升级公告与新功能说明",
+        "author": "Yhsux",
+        "time": "2021-10-03 02:26",
+        "forum": "站务管理",
+        "views": "691",
+        "replies": "42",
+        "likes": "134"
+      },
+      {
+        "title": "BBCode 使用手册",
+        "author": "Admin",
+        "time": "2017-02-23 15:09",
+        "forum": "站务管理",
+        "views": "3,670",
+        "replies": "173",
+        "likes": "812"
+      },
+      {
+        "title": "新人必读：注册邀请码使用说明与社区守则",
+        "author": "Admin",
+        "time": "2017-02-14 12:48",
+        "forum": "站务管理",
+        "views": "2,574",
+        "replies": "45",
+        "likes": "398"
+      }
+    ],
+    "latestPosts": [
+      {
+        "title": "给你们看看我家门口的逆天设计",
+        "author": "YuDrfas",
+        "time": "2026-07-06 18:24",
+        "forum": "适兽化",
+        "views": "56",
+        "replies": "0",
+        "likes": "1"
+      },
+      {
+        "title": "【教程】在Procreate上画兽耳的一些技巧",
+        "author": "画画的龙",
+        "time": "2024-07-11 12:05",
+        "forum": "技术交流",
+        "views": "89",
+        "replies": "12",
+        "likes": "34"
+      },
+      {
+        "title": "【资源】分享一套F2U的兽人角色立绘素材",
+        "author": "素材收集者",
+        "time": "2024-07-11 10:30",
+        "forum": "资源分享",
+        "views": "203",
+        "replies": "8",
+        "likes": "56"
+      },
+      {
+        "title": "【搬运】关于兽人种社区文化的英文文章翻译",
+        "author": "翻译菌",
+        "time": "2024-07-10 21:00",
+        "forum": "国外精华帖文搬运",
+        "views": "67",
+        "replies": "5",
+        "likes": "18"
+      },
+      {
+        "title": "有人试过定制尾巴保护套吗？",
+        "author": "尾巴很宝贵",
+        "time": "2024-07-10 19:45",
+        "forum": "适兽化",
+        "views": "112",
+        "replies": "17",
+        "likes": "29"
+      }
+    ],
+    "forumList": [
+      {
+        "name": "综合讨论",
+        "todayPosts": "0",
+        "totalPosts": "485",
+        "totalViews": "32,000",
+        "latestTitle": "大家来聊聊自己第一次接触兽人圈的经历吧",
+        "latestAuthor": "森林狼",
+        "latestTime": "2024-07-11 08:15"
+      },
+      {
+        "name": "技术交流",
+        "todayPosts": "0",
+        "totalPosts": "221",
+        "totalViews": "12,000",
+        "latestTitle": "【求助】CSP的3D模型怎么导入到画布中",
+        "latestAuthor": "建模新手",
+        "latestTime": "2024-07-10 20:30"
+      },
+      {
+        "name": "资源分享",
+        "todayPosts": "0",
+        "totalPosts": "378",
+        "totalViews": "28,000",
+        "latestTitle": "【资源】收集了一些兽人主题的手机壁纸",
+        "latestAuthor": "壁纸收藏家",
+        "latestTime": "2024-07-10 14:00"
+      },
+      {
+        "name": "国外精华帖文搬运",
+        "todayPosts": "0",
+        "totalPosts": "180",
+        "totalViews": "8,500",
+        "latestTitle": "【搬运】一篇关于Furry Convention的体验分享",
+        "latestAuthor": "翻译菌",
+        "latestTime": "2024-07-09 22:10"
+      },
+      {
+        "name": "适兽化",
+        "todayPosts": "0",
+        "totalPosts": "543",
+        "totalViews": "35,000",
+        "latestTitle": "大家家里的适兽化改造都做了哪些？",
+        "latestAuthor": "装修中的虎",
+        "latestTime": "2024-07-10 16:20"
+      },
+      {
+        "name": "兽人生物学",
+        "todayPosts": "0",
+        "totalPosts": "243",
+        "totalViews": "14,000",
+        "latestTitle": "【科普】关于兽人种指甲护理的一些知识",
+        "latestAuthor": "爪爪护理师",
+        "latestTime": "2024-07-09 15:40"
+      },
+      {
+        "name": "站务管理",
+        "todayPosts": "0",
+        "totalPosts": "83",
+        "totalViews": "3,800",
+        "latestTitle": "关于论坛表情包功能的建议",
+        "latestAuthor": "热心市民",
+        "latestTime": "2024-07-08 11:00"
+      }
+    ]
+  }
+}

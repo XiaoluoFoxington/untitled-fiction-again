@@ -847,10 +847,10 @@
         <!-- ========== 标题栏 ========== -->
         <div id="header">
             <div class="site-logo">
-                <span class="prefix">ZH.</span><span class="name">HybridTopia</span>
+                <span class="prefix" id="site-prefix">ZH.</span><span class="name" id="site-name">HybridTopia</span>
             </div>
             <div class="header-spacer"></div>
-            <span class="platform-version">HT Platform 2.3</span>
+            <span class="platform-version" id="site-version">HT Platform 2.3</span>
         </div>
 
         <!-- ========== 导航栏 ========== -->
@@ -899,14 +899,7 @@
                 <div class="sidebar-block">
                     <div class="block-header"><i class="fa fa-folder-open"></i> 板块</div>
                     <div class="block-body">
-                        <ul class="forum-quick-list">
-                            <li><a href="#">综合讨论</a> <span class="count-badge">485</span></li>
-                            <li><a href="#">技术交流</a> <span class="count-badge">221</span></li>
-                            <li><a href="#">资源分享</a> <span class="count-badge">378</span></li>
-                            <li><a href="#">国外精华帖文搬运</a> <span class="count-badge">180</span></li>
-                            <li><a href="#">适兽化</a> <span class="count-badge">543</span></li>
-                            <li><a href="#">兽人生物学</a> <span class="count-badge">243</span></li>
-                            <li><a href="#">站务管理</a> <span class="count-badge">83</span></li>
+                        <ul class="forum-quick-list" id="sidebar-forums">
                         </ul>
                     </div>
                 </div>
@@ -943,13 +936,7 @@
                 <div class="sidebar-block">
                     <div class="block-header"><i class="fa fa-bar-chart"></i> 论坛统计</div>
                     <div class="block-body">
-                        <ul class="stats-list">
-                            <li><span>总帖文数</span> <span class="stat-val">2,133</span></li>
-                            <li><span>总用户数</span> <span class="stat-val">5,560</span></li>
-                            <li><span>今日帖数</span> <span class="stat-val">0</span></li>
-                            <li><span>昨日帖数</span> <span class="stat-val">8</span></li>
-                            <li><span>最高在线</span> <span class="stat-val">252</span></li>
-                            <li><span>最高在线日期</span> <span class="stat-val">2023-03-15</span></li>
+                        <ul class="stats-list" id="sidebar-stats">
                         </ul>
                     </div>
                 </div>
@@ -1006,43 +993,7 @@
                                     <th><i class="fa fa-thumbs-up"></i> 点赞</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="sticky-row">
-                                    <td><a href="#" class="post-title">HybridTopia 论坛总规（第4版）</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
-                                    <td class="time-cell">2024-01-15 08:00</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">4,230</td>
-                                    <td class="num-cell">89</td>
-                                    <td class="num-cell">656</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td><a href="#" class="post-title">HT Platform 2.3 升级公告与新功能说明</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">Yhsux</a></td>
-                                    <td class="time-cell">2021-10-03 02:26</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">691</td>
-                                    <td class="num-cell">42</td>
-                                    <td class="num-cell">134</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td><a href="#" class="post-title">BBCode 使用手册</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
-                                    <td class="time-cell">2017-02-23 15:09</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">3,670</td>
-                                    <td class="num-cell">173</td>
-                                    <td class="num-cell">812</td>
-                                </tr>
-                                <tr class="sticky-row">
-                                    <td><a href="#" class="post-title">新人必读：注册邀请码使用说明与社区守则</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">Admin</a></td>
-                                    <td class="time-cell">2017-02-14 12:48</td>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">2,574</td>
-                                    <td class="num-cell">45</td>
-                                    <td class="num-cell">398</td>
-                                </tr>
+                            <tbody id="sticky-posts-body">
                             </tbody>
                         </table>
                     </div>
@@ -1066,52 +1017,7 @@
                                     <th><i class="fa fa-thumbs-up"></i> 点赞</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="#" class="post-title">给你们看看我家门口的逆天设计</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">YuDrfas</a></td>
-                                    <td class="time-cell">2026-07-06 18:24</td>
-                                    <td class="forum-name-cell"><a href="#">适兽化</a></td>
-                                    <td class="num-cell">56</td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">1</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="post-title">【教程】在Procreate上画兽耳的一些技巧</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">画画的龙</a></td>
-                                    <td class="time-cell">2024-07-11 12:05</td>
-                                    <td class="forum-name-cell"><a href="#">技术交流</a></td>
-                                    <td class="num-cell">89</td>
-                                    <td class="num-cell">12</td>
-                                    <td class="num-cell">34</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="post-title">【资源】分享一套F2U的兽人角色立绘素材</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">素材收集者</a></td>
-                                    <td class="time-cell">2024-07-11 10:30</td>
-                                    <td class="forum-name-cell"><a href="#">资源分享</a></td>
-                                    <td class="num-cell">203</td>
-                                    <td class="num-cell">8</td>
-                                    <td class="num-cell">56</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="post-title">【搬运】关于兽人种社区文化的英文文章翻译</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">翻译菌</a></td>
-                                    <td class="time-cell">2024-07-10 21:00</td>
-                                    <td class="forum-name-cell"><a href="#">国外精华帖文搬运</a></td>
-                                    <td class="num-cell">67</td>
-                                    <td class="num-cell">5</td>
-                                    <td class="num-cell">18</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="post-title">有人试过定制尾巴保护套吗？</a></td>
-                                    <td class="user-cell"><a href="#" class="post-title">尾巴很宝贵</a></td>
-                                    <td class="time-cell">2024-07-10 19:45</td>
-                                    <td class="forum-name-cell"><a href="#">适兽化</a></td>
-                                    <td class="num-cell">112</td>
-                                    <td class="num-cell">17</td>
-                                    <td class="num-cell">29</td>
-                                </tr>
+                            <tbody id="latest-posts-body">
                             </tbody>
                         </table>
                         <div class="load-more-wrap">
@@ -1138,70 +1044,7 @@
                                     <th>最新帖文发布时间</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">综合讨论</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">485</td>
-                                    <td class="num-cell">32,000</td>
-                                    <td><a href="#" class="post-title">大家来聊聊自己第一次接触兽人圈的经历吧</a></td>
-                                    <td class="user-cell">森林狼</td>
-                                    <td class="time-cell">2024-07-11 08:15</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">技术交流</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">221</td>
-                                    <td class="num-cell">12,000</td>
-                                    <td><a href="#" class="post-title">【求助】CSP的3D模型怎么导入到画布中</a></td>
-                                    <td class="user-cell">建模新手</td>
-                                    <td class="time-cell">2024-07-10 20:30</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">资源分享</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">378</td>
-                                    <td class="num-cell">28,000</td>
-                                    <td><a href="#" class="post-title">【资源】收集了一些兽人主题的手机壁纸</a></td>
-                                    <td class="user-cell">壁纸收藏家</td>
-                                    <td class="time-cell">2024-07-10 14:00</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">国外精华帖文搬运</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">180</td>
-                                    <td class="num-cell">8,500</td>
-                                    <td><a href="#" class="post-title">【搬运】一篇关于Furry Convention的体验分享</a></td>
-                                    <td class="user-cell">翻译菌</td>
-                                    <td class="time-cell">2024-07-09 22:10</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">适兽化</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">543</td>
-                                    <td class="num-cell">35,000</td>
-                                    <td><a href="#" class="post-title">大家家里的适兽化改造都做了哪些？</a></td>
-                                    <td class="user-cell">装修中的虎</td>
-                                    <td class="time-cell">2024-07-10 16:20</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">兽人生物学</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">243</td>
-                                    <td class="num-cell">14,000</td>
-                                    <td><a href="#" class="post-title">【科普】关于兽人种指甲护理的一些知识</a></td>
-                                    <td class="user-cell">爪爪护理师</td>
-                                    <td class="time-cell">2024-07-09 15:40</td>
-                                </tr>
-                                <tr>
-                                    <td class="forum-name-cell"><a href="#">站务管理</a></td>
-                                    <td class="num-cell">0</td>
-                                    <td class="num-cell">83</td>
-                                    <td class="num-cell">3,800</td>
-                                    <td><a href="#" class="post-title">关于论坛表情包功能的建议</a></td>
-                                    <td class="user-cell">热心市民</td>
-                                    <td class="time-cell">2024-07-08 11:00</td>
-                                </tr>
+                            <tbody id="forum-list-body">
                             </tbody>
                         </table>
                     </div>
@@ -1212,10 +1055,10 @@
 
         <!-- ========== 页脚 ========== -->
         <div id="footer">
-            <p>&copy; 2016-2026 <strong>ZH.HybridTopia</strong></P>
-            <p>Powered by <strong>HT Platform 2.3</strong>(37w46be)</p>
-            <p>所有发布内容版权归发布者所有</p>
-            <p><i class="fa fa-clock-o"></i> 页面加载于 7月7日 00:35</p>
+            <p id="footer-copyright">&copy; 2016-2026 <strong>ZH.HybridTopia</strong></P>
+            <p id="footer-powered">Powered by <strong>HT Platform 2.3</strong>(37w46be)</p>
+            <p id="footer-text">所有发布内容版权归发布者所有</p>
+            <p id="footer-loadtime"><i class="fa fa-clock-o"></i> 页面加载于 7月7日 00:35</p>
         </div>
 
     </div>
@@ -1225,28 +1068,118 @@
 
     <script>
         (function() {
-            // ============ 页面加载时间 ============
-            const loadTimeEl = document.getElementById('loadTime');
-            if (loadTimeEl) {
-                const now = new Date();
-                const timeStr = now.getFullYear() + '-' +
-                    String(now.getMonth() + 1).padStart(2, '0') + '-' +
-                    String(now.getDate()).padStart(2, '0') + ' ' +
-                    String(now.getHours()).padStart(2, '0') + ':' +
-                    String(now.getMinutes()).padStart(2, '0') + ':' +
-                    String(now.getSeconds()).padStart(2, '0');
-                loadTimeEl.textContent = timeStr;
+            // ============ 从 data.json 加载数据 ============
+            function loadData() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', './资源/13_data.json', true);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        try {
+                            var data = JSON.parse(xhr.responseText);
+                            renderData(data);
+                        } catch (e) {
+                            console.error('data.json 解析失败:', e);
+                        }
+                    }
+                };
+                xhr.onerror = function() {
+                    console.error('data.json 加载失败');
+                };
+                xhr.send();
+            }
+
+            function renderData(data) {
+                // 站点标题/版本
+                document.getElementById('site-prefix').textContent = data.site.prefix;
+                document.getElementById('site-name').textContent = data.site.name;
+                document.getElementById('site-version').textContent = data.site.version;
+                document.title = data.site.pageTitle;
+
+                // 侧边栏 - 板块列表
+                var forumList = document.getElementById('sidebar-forums');
+                forumList.innerHTML = '';
+                data.sidebar.forums.forEach(function(f) {
+                    var li = document.createElement('li');
+                    li.innerHTML = '<a href="#">' + f.name + '</a> <span class="count-badge">' + f.count + '</span>';
+                    forumList.appendChild(li);
+                });
+
+                // 侧边栏 - 统计
+                var statsList = document.getElementById('sidebar-stats');
+                statsList.innerHTML = '';
+                var statsData = [
+                    { label: '总帖文数', key: 'totalPosts' },
+                    { label: '总用户数', key: 'totalUsers' },
+                    { label: '今日帖数', key: 'todayPosts' },
+                    { label: '昨日帖数', key: 'yesterdayPosts' },
+                    { label: '最高在线', key: 'maxOnline' },
+                    { label: '最高在线日期', key: 'maxOnlineDate' }
+                ];
+                statsData.forEach(function(s) {
+                    var li = document.createElement('li');
+                    li.innerHTML = '<span>' + s.label + '</span> <span class="stat-val">' + data.sidebar.stats[s.key] + '</span>';
+                    statsList.appendChild(li);
+                });
+
+                // 全局置顶表格
+                renderPostTable('sticky-posts-body', data.tables.stickyPosts, true);
+
+                // 最新帖文表格
+                renderPostTable('latest-posts-body', data.tables.latestPosts, false);
+
+                // 板块列表表格
+                renderForumTable('forum-list-body', data.tables.forumList);
+
+                // 页脚
+                document.getElementById('footer-copyright').innerHTML = data.site.copyright;
+                document.getElementById('footer-powered').innerHTML = 'Powered by <strong>' + data.site.poweredBy + '</strong>';
+                document.getElementById('footer-text').textContent = data.site.footerText;
+                document.getElementById('footer-loadtime').innerHTML = '<i class="fa fa-clock-o"></i> ' + data.site.loadTimeText;
+            }
+
+            function renderPostTable(tbodyId, posts, isSticky) {
+                var tbody = document.getElementById(tbodyId);
+                tbody.innerHTML = '';
+                posts.forEach(function(p) {
+                    var tr = document.createElement('tr');
+                    if (isSticky) tr.className = 'sticky-row';
+                    tr.innerHTML =
+                        '<td><a href="#" class="post-title">' + p.title + '</a></td>' +
+                        '<td class="user-cell"><a href="#" class="post-title">' + p.author + '</a></td>' +
+                        '<td class="time-cell">' + p.time + '</td>' +
+                        '<td class="forum-name-cell"><a href="#">' + p.forum + '</a></td>' +
+                        '<td class="num-cell">' + p.views + '</td>' +
+                        '<td class="num-cell">' + p.replies + '</td>' +
+                        '<td class="num-cell">' + p.likes + '</td>';
+                    tbody.appendChild(tr);
+                });
+            }
+
+            function renderForumTable(tbodyId, forums) {
+                var tbody = document.getElementById(tbodyId);
+                tbody.innerHTML = '';
+                forums.forEach(function(f) {
+                    var tr = document.createElement('tr');
+                    tr.innerHTML =
+                        '<td class="forum-name-cell"><a href="#">' + f.name + '</a></td>' +
+                        '<td class="num-cell">' + f.todayPosts + '</td>' +
+                        '<td class="num-cell">' + f.totalPosts + '</td>' +
+                        '<td class="num-cell">' + f.totalViews + '</td>' +
+                        '<td><a href="#" class="post-title">' + f.latestTitle + '</a></td>' +
+                        '<td class="user-cell">' + f.latestAuthor + '</td>' +
+                        '<td class="time-cell">' + f.latestTime + '</td>';
+                    tbody.appendChild(tr);
+                });
             }
 
             // ============ Toast 提示 ============
-            const toast = document.getElementById('toast');
-            let toastTimer = null;
+            var toast = document.getElementById('toast');
+            var toastTimer = null;
 
             function showToast(msg, type) {
                 if (toastTimer) clearTimeout(toastTimer);
                 toast.textContent = msg;
                 toast.className = 'toast ' + (type || '');
-                // 强制回流后添加show
                 void toast.offsetWidth;
                 toast.classList.add('show');
                 toastTimer = setTimeout(function() {
@@ -1255,14 +1188,13 @@
             }
 
             // ============ CSS自定义上传 ============
-            const cssFileInput = document.getElementById('cssFileInput');
-            const applyCssBtn = document.getElementById('applyCssBtn');
-            const resetCssBtn = document.getElementById('resetCssBtn');
-            const cssStatus = document.getElementById('cssStatus');
-            const STORAGE_KEY = 'hybridtopia_custom_css';
-            let customStyleEl = null;
+            var cssFileInput = document.getElementById('cssFileInput');
+            var applyCssBtn = document.getElementById('applyCssBtn');
+            var resetCssBtn = document.getElementById('resetCssBtn');
+            var cssStatus = document.getElementById('cssStatus');
+            var STORAGE_KEY = 'hybridtopia_custom_css';
+            var customStyleEl = null;
 
-            // 创建或获取自定义样式元素
             function getOrCreateStyleEl() {
                 if (!customStyleEl) {
                     customStyleEl = document.getElementById('custom-css-style');
@@ -1276,41 +1208,29 @@
                 return customStyleEl;
             }
 
-            // 应用CSS文本
             function applyCssText(cssText) {
-                const styleEl = getOrCreateStyleEl();
+                var styleEl = getOrCreateStyleEl();
                 styleEl.textContent = cssText;
                 cssStatus.classList.add('active');
-                // 保存到localStorage
                 try {
                     localStorage.setItem(STORAGE_KEY, cssText);
-                } catch (e) {
-                    // localStorage不可用，忽略
-                }
+                } catch (e) {}
             }
 
-            // 清除自定义CSS
             function clearCustomCss() {
-                if (customStyleEl) {
-                    customStyleEl.textContent = '';
-                }
-                const el = document.getElementById('custom-css-style');
-                if (el) {
-                    el.textContent = '';
-                }
+                if (customStyleEl) customStyleEl.textContent = '';
+                var el = document.getElementById('custom-css-style');
+                if (el) el.textContent = '';
                 cssStatus.classList.remove('active');
                 try {
                     localStorage.removeItem(STORAGE_KEY);
-                } catch (e) {
-                    // 忽略
-                }
+                } catch (e) {}
                 if (cssFileInput) cssFileInput.value = '';
             }
 
-            // 应用CSS按钮点击
             if (applyCssBtn && cssFileInput) {
                 applyCssBtn.addEventListener('click', function() {
-                    const file = cssFileInput.files[0];
+                    var file = cssFileInput.files[0];
                     if (!file) {
                         showToast('请先选择一个CSS文件', 'warning');
                         return;
@@ -1319,10 +1239,9 @@
                         showToast('请选择有效的.css文件', 'warning');
                         return;
                     }
-                    const reader = new FileReader();
+                    var reader = new FileReader();
                     reader.onload = function(e) {
-                        const cssText = e.target.result;
-                        applyCssText(cssText);
+                        applyCssText(e.target.result);
                         showToast('自定义主题已应用！');
                     };
                     reader.onerror = function() {
@@ -1332,7 +1251,6 @@
                 });
             }
 
-            // 恢复默认按钮
             if (resetCssBtn) {
                 resetCssBtn.addEventListener('click', function() {
                     clearCustomCss();
@@ -1340,69 +1258,24 @@
                 });
             }
 
-            // 页面加载时从localStorage恢复CSS
             (function restoreCssFromStorage() {
                 try {
-                    const savedCss = localStorage.getItem(STORAGE_KEY);
+                    var savedCss = localStorage.getItem(STORAGE_KEY);
                     if (savedCss && savedCss.trim().length > 0) {
-                        const styleEl = getOrCreateStyleEl();
+                        var styleEl = getOrCreateStyleEl();
                         styleEl.textContent = savedCss;
                         cssStatus.classList.add('active');
                     }
-                } catch (e) {
-                    // 忽略
-                }
+                } catch (e) {}
             })();
 
-            // ============ 表格行hover微效 ============
-            const allDataTables = document.querySelectorAll('table.data-table tbody tr');
-            allDataTables.forEach(function(row) {
-                row.addEventListener('mouseenter', function() {
-                    if (!row.classList.contains('sticky-row')) {
-                        row.style.transition = 'background 0.12s ease';
-                    }
-                });
-            });
+            // ============ 加载数据 ============
+            loadData();
 
-            // ============ 模拟导航链接点击 ============
-            const allNavLinks = document.querySelectorAll(
-                '#navbar a, #breadcrumb a, .forum-quick-list a, .tag-cloud a, .rss-link, .btn-sponsor, .btn-sm, #footer a, table.data-table .post-title, table.data-table .forum-name-cell a'
-                );
-            allNavLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    const href = link.getAttribute('href');
-                    if (href === '#') {
-                        e.preventDefault();
-                        const text = link.textContent.trim().substring(0, 40);
-                        showToast('导航链接: ' + (text || '未知页面') + ' (演示页面)');
-                    }
-                });
-            });
-
-            // ============ 登录按钮点击 ============
-            const loginBtns = document.querySelectorAll('.btn-login, .btn-login-sm');
-            loginBtns.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showToast('登录功能 - 演示页面，暂未实现');
-                });
-            });
-
-            // ============ 注册按钮 ============
-            const registerBtns = document.querySelectorAll('.btn-register-sm');
-            registerBtns.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showToast('注册功能 - 演示页面，暂未实现');
-                });
-            });
-
-            console.log('%c ZH.HybridTopia %c HT Platform 2.3 %c 论坛首页已就绪 ',
+            console.log('%c ZH.HybridTopia %c HT Platform 2.3 %c 就绪 ',
                 'background:#1a3c5e;color:#E8F0F8;padding:4px 8px;font-weight:bold;border-radius:3px 0 0 3px;',
                 'background:#2B6DA8;color:#FFF;padding:4px 8px;font-weight:bold;',
                 'background:#F0F5FA;color:#3A5A7C;padding:4px 8px;border-radius:0 3px 3px 0;');
-            console.log('%c 模仿2010年Discuz!风格论坛 | FontAwesome 4.7 | 公益社区 ',
-                'color:#6B7D8E;font-size:11px;');
         })();
     </script>
 </body>
