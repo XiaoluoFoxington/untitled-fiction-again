@@ -1,0 +1,60 @@
+﻿From 909158b6ae61b57db23bb79606a3fefb1e2b5263 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E6=B4=9B=E7=8B=90?= <2046665121@qq.com>
+Date: Mon, 3 Aug 2026 21:55:40 +0800
+Subject: [PATCH 07/14] =?UTF-8?q?=E6=9B=B4=E6=96=B0=EF=BC=9A=E8=8A=8224?=
+ =?UTF-8?q?=E5=91=9C~?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ "\345\205\266\344\273\226/24.txt" | 5 +++++
+ 1 file changed, 5 insertions(+), 0 deletions(-)
+ create mode 100644 "\345\205\266\344\273\226/24.txt"
+
+diff --git "a/\345\205\266\344\273\226/24.txt" "b/\345\205\266\344\273\226/24.txt"
+new file mode 100644
+index 0000000..99a2cbe
+--- /dev/null
++++ "b/\345\205\266\344\273\226/24.txt"
+@@ -0,0 +1,5 @@
++用自然码拼音拼写，v→ž，i→č，u→š，声调作为字母放中间，轻声为连词符，一声为“d”，二声为“r”，三声为“v”，四声为空格。
++
++L19：“你是指‘一个晚上’？”
++L21：“是的！感谢！这里有人能说我的母语！”
++L25：“感谢！”
+\ No newline at end of file
+
+-- 
+2.50.0.windows.2
+
+
+From 55b54862df642636b090231180a4cb70b33b8ea0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=E6=B4=9B=E7=8B=90?= <2046665121@qq.com>
+Date: Tue, 4 Aug 2026 00:04:44 +0800
+Subject: [PATCH 14/14] =?UTF-8?q?=E6=9B=B4=E6=96=B0=EF=BC=9A=E8=8A=8224?=
+ =?UTF-8?q?=E5=91=9C~?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ "\345\205\266\344\273\226/24.txt" | 2 +-
+ 1 file changed, 1 insertions(+), 1 deletions(-)
+
+diff --git "a/\345\205\266\344\273\226/24.txt" "b/\345\205\266\344\273\226/24.txt"
+index 99a2cbe..400ef9c 100644
+--- "a/\345\205\266\344\273\226/24.txt"
++++ "b/\345\205\266\344\273\226/24.txt"
+@@ -2,4 +2,4 @@
+ 
+ L19：“你是指‘一个晚上’？”
+ L21：“是的！感谢！这里有人能说我的母语！”
+-L25：“感谢！”
+\ No newline at end of file
++L27：“再次感谢！”
+\ No newline at end of file
+
+-- 
+2.50.0.windows.2
+
